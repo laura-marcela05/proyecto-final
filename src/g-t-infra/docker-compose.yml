@@ -1,0 +1,46 @@
+# Gym Track, local environment: three services from four repositories cloned side by side.
+# Every value comes from .env (copy .env.example); nothing secret is written here.
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:?Set POSTGRES_DB in .env}
+      POSTGRES_USER: ${POSTGRES_USER:?Set POSTGRES_USER in .env}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    ports:
+      - "5432:5432"
+    volumes:
+      - gt-db-data:/var/lib/postgresql/data
+      # 01-schema.sql, then 02-seed.sql, run once, while the volume is empty.
+      - ../g-t-db/sql:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build: ../g-t-api
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      AUTH_JWT_SECRET: ${AUTH_JWT_SECRET:?Set AUTH_JWT_SECRET in .env}
+      AUTH_JWT_EXPIRY_SECONDS: ${AUTH_JWT_EXPIRY_SECONDS:?Set AUTH_JWT_EXPIRY_SECONDS in .env}
+      CORS_ALLOWED_ORIGIN: ${CORS_ALLOWED_ORIGIN:?Set CORS_ALLOWED_ORIGIN in .env}
+
+  portal:
+    build: ../g-t-portal
+    ports:
+      - "4200:80"
+    depends_on:
+      api:
+        condition: service_started
+
+volumes:
+  gt-db-data:

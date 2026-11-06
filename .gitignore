@@ -1,0 +1,19 @@
+# Variables de entorno reales (solo se versiona .env.example)
+.env
+
+# Compilados y dependencias
+target/
+node_modules/
+dist/
+.angular/
+coverage/
+
+# Resultados temporales de medición (los resultados finales van en docs/metricas/)
+metricas/out/
+
+# IDE y sistema operativo
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

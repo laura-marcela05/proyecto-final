@@ -1,0 +1,28 @@
+erDiagram
+    USERS ||--o{ STUDENTS : owns
+    STUDENTS ||--o{ SESSIONS : logs
+    SESSIONS ||--o{ SESSION_MUSCLE_GROUPS : works
+    USERS {
+        uuid id PK
+        varchar username UK
+        varchar full_name
+        varchar password_hash
+        varchar role
+    }
+    STUDENTS {
+        uuid id PK
+        uuid trainer_id FK
+        varchar name
+        varchar document UK
+    }
+    SESSIONS {
+        uuid id PK
+        uuid student_id FK
+        timestamptz check_in_at
+        timestamptz check_out_at
+    }
+    SESSION_MUSCLE_GROUPS {
+        uuid id PK
+        uuid session_id FK
+        varchar muscle_group
+    }
