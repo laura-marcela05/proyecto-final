@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: gymtracker
+  autoconfigure:
+    # Users come from the database and the JWT filter; Boot's generated in-memory user is never used.
+    exclude: org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+auth:
+  jwt:
+    secret: ${AUTH_JWT_SECRET}
+    expiry-seconds: ${AUTH_JWT_EXPIRY_SECONDS}
+
+cors:
+  allowed-origin: ${CORS_ALLOWED_ORIGIN}
