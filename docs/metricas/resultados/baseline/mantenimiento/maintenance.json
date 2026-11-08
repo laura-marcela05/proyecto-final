@@ -1,0 +1,46 @@
+{
+  "hours_total": "2.67",
+  "types": [
+    {
+      "type": "correctivo",
+      "hours": "0.17",
+      "effort_percent": "6.367041198501872659176029963",
+      "cost": null,
+      "records": 1
+    },
+    {
+      "type": "adaptativo",
+      "hours": "0",
+      "effort_percent": "0E+2",
+      "cost": null,
+      "records": 0
+    },
+    {
+      "type": "perfectivo",
+      "hours": "0",
+      "effort_percent": "0E+2",
+      "cost": null,
+      "records": 0
+    },
+    {
+      "type": "preventivo",
+      "hours": "2.50",
+      "effort_percent": "93.63295880149812734082397004",
+      "cost": null,
+      "records": 3
+    }
+  ],
+  "cost_total": null,
+  "has_estimates": true,
+  "unlogged_labeled_issues": [],
+  "coverage_warning": "Distribution describes recorded effort only; unlogged work is unknown, not zero",
+  "currency": "not assigned by the script; document the common currency externally if rates are supplied",
+  "metadata": {
+    "generated_utc": "2026-11-08T20:12:56.091568+00:00",
+    "git_head": "f0669d6f2898906a565fb179e2359f1bcd06fbca",
+    "records_sha256": "74eaa11ce7f8c6e14e5d178604e0fb307bbb5497e7a6c672ce817e0b00d2e939",
+    "issues_sha256": "69b9c34f40c4fe6e0be92934b491a1988b78c1bd3b930027c02aa9b36b1effb8",
+    "script_sha256": "5e1d116a09c836a29cb34b7347d21b5bdb0fe0ad753fc5a519881e1a3e2e774b",
+    "tool": "gym-track-maintenance/1.0"
+  }
+}

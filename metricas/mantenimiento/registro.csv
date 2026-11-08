@@ -1,1 +1,5 @@
 record_id,issue_number,type,person,date,hours,basis,hourly_rate,commit,description
+REC-01,24,preventivo,Juan,2026-11-08,0.75,retrospective_estimate,,,"Pruebas autenticacion y permisos (PR https://github.com/laura-marcela05/proyecto-final/pull/17)"
+REC-02,25,preventivo,Laura,2026-11-08,0.75,retrospective_estimate,,,"Pruebas servicio estudiantes (PR https://github.com/laura-marcela05/proyecto-final/pull/16)"
+REC-03,26,preventivo,Cristian,2026-11-08,1.00,retrospective_estimate,,,"Pruebas sesiones y flujo postman (commits 09e6f78 7fe169b 7a96d50)"
+REC-04,27,correctivo,Cristian,2026-11-08,0.17,retrospective_estimate,,,"Correccion de ruta coleccion postman (PR https://github.com/laura-marcela05/proyecto-final/pull/19)"
