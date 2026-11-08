@@ -51,6 +51,7 @@ class UserServiceTest {
                 .isInstanceOf(ApiException.class)
                 .satisfies(ex -> assertThat(((ApiException) ex).getCode()).isEqualTo(ErrorCode.USERNAME_ALREADY_TAKEN));
         verify(users, never()).save(any());
+        org.mockito.Mockito.verifyNoInteractions(passwordEncoder);
     }
 
     @Test
@@ -160,6 +161,34 @@ class UserServiceTest {
         userService.delete(id, UUID.randomUUID());
 
         verify(users).delete(existing);
+    }
+
+
+    @Test
+    void updateUser_whenMissing_doesNotCheckDuplicatesOrEncodePassword() {
+        UUID id = UUID.randomUUID();
+        when(users.findById(id)).thenReturn(Optional.empty());
+
+        assertError(() -> userService.update(id,
+                new UserUpdateRequest("Changed", "taken", "Changed123*")), ErrorCode.USER_NOT_FOUND);
+
+        verify(users, never()).existsByUsernameAndIdNot(any(), any());
+        org.mockito.Mockito.verifyNoInteractions(passwordEncoder);
+    }
+
+    @Test
+    void updateUser_withOwnUsername_usesQueryExcludingOwnId() {
+        UUID id = UUID.randomUUID();
+        User existing = user(id);
+        when(users.findById(id)).thenReturn(Optional.of(existing));
+
+        UserResponse result = userService.update(id,
+                new UserUpdateRequest("Updated", "trainer1", null));
+
+        assertThat(result.username()).isEqualTo("trainer1");
+        verify(users).existsByUsernameAndIdNot("trainer1", id);
+        verify(users, never()).existsByUsername(any());
+        org.mockito.Mockito.verifyNoInteractions(passwordEncoder);
     }
 
     private static User user(UUID id) {
