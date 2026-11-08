@@ -1,0 +1,39 @@
+{
+  "tool": "gym-track-anexo-c/1.0",
+  "baseline_revision": "f0669d6f2898906a565fb179e2359f1bcd06fbca",
+  "generated_utc": "2026-11-08T22:45:21.688571+00:00",
+  "git_head": "6914a89a207725368339e21fc9668b3a9e8a22ad",
+  "input_sha256": {
+    "vg_loc/files.csv": "cb0b6a1eee7bb3dcfa3fc504c9d9e4cb81d041131e1e4b03bedb026cbe0b3a23",
+    "vg_loc/methods.csv": "b0fe63ffe64bd0aab5d0a1a9fd322ddbd5351149f34ccec8b5e4d84dd4451ca9",
+    "vg_loc/metadata.json": "d03bff0a53369816a5a868cbf2a96e3e7e34b4a6641b5f0a4e238ae2610a2f84",
+    "ck/ck.csv": "b80e440c16ab366ebd1d7816bfe1fa7c3c4a969cc936d3e6d7df61635e485898",
+    "ck/class.csv": "dd8ce81f6725f21c488ea685773c78efdbb4c3ebc91094fd765d9333b10fb7d4",
+    "ck/method.csv": "57724a00f32b51085cef94cb769a3d6e7ab8d0315b43c64f0094bc99c3809878",
+    "ck/ck.log": "0633ec6d474314cabae001721ebd52d3effcfacd971d90c9ab6ad68d9e7547b4",
+    "ck/metadata.json": "da133ff3334478c8fba21fd5c4d7af5cd9f2e454eabaf46267d007b49d1ef9ec",
+    "mi/mi.csv": "bcfe13f14f89dcbffcb6d8ff39ded4013739eaf5b03c4dbd3ee8094a7b91d0bf",
+    "mi/metadata.json": "bcc383a8f4af47130a25e5aa73fca326d5fd92b5bfd0b0cf719bfb8bde9c8f17",
+    "issues.json": "69b9c34f40c4fe6e0be92934b491a1988b78c1bd3b930027c02aa9b36b1effb8",
+    "mantenimiento/maintenance.json": "acf993f65629d62178708984d38813d572a0853e8ec7b374ae15fb14d0b8bcd5",
+    "registro.csv": "74eaa11ce7f8c6e14e5d178604e0fb307bbb5497e7a6c672ce817e0b00d2e939"
+  },
+  "script_sha256": "ab2526809833cc37f5e46d268354b43453dd35405a087e2dc2a3ae56a1ab419d",
+  "matplotlib_version": "3.10.8",
+  "table_rows": {
+    "V(G) por unidad": 269,
+    "LOC por unidad y lenguaje": 277,
+    "Suite CK por clase": 119,
+    "MI por unidad Java": 260,
+    "Esfuerzo de mantenimiento registrado": 10
+  },
+  "result_sha256": {
+    "01-vg.png": "4ba1e37615035bd1db63de721267160d3c0bebba55bd24e1d4550dc988a052e6",
+    "02-loc.png": "f74ccc8dc741cdde4b6bd9c966c85ab3e5d5cfa4170749d5be081e366da25313",
+    "03-cbo.png": "77ce2c5534774fa9ebd01c614a5f3b019e95792a388de102974b98a4570ecf31",
+    "04-wmc.png": "333064b06ba9b39aab4879dc58949be3f6668f3302a8881ed02ebb11d4bf5958",
+    "05-mi-bruto.png": "ecb275735c243e48632ebc4231eacd3ddffb08aefbecc2b29118966e070622ae",
+    "06-esfuerzo.png": "207ad49f66d875f1697f48b32bc46681c415229b955b42836999d017f983a86a",
+    "resultados.md": "b2b6d99197caa7c663dad8af6c2adb73fa9a2e5843afb1644c604657eeb271d4"
+  }
+}
