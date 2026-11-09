@@ -47,18 +47,14 @@ public class StudentService {
     public StudentResponse create(UUID callerId, StudentRequest request) {
         // A token can outlive its user (a trainer deleted after logging in): that caller is no longer authenticated.
         User trainer = users.findById(callerId).orElseThrow(() -> new ApiException(ErrorCode.UNAUTHENTICATED));
-        if (students.existsByDocument(request.document())) {
-            throw new ApiException(ErrorCode.DOCUMENT_ALREADY_REGISTERED);
-        }
+        requireAvailableDocument(students.existsByDocument(request.document()));
         return StudentResponse.from(students.save(new Student(trainer, request.name(), request.document())));
     }
 
     @Transactional
     public StudentResponse update(UUID studentId, UUID callerId, Role role, StudentRequest request) {
         Student student = requireAccessible(studentId, callerId, role);
-        if (students.existsByDocumentAndIdNot(request.document(), studentId)) {
-            throw new ApiException(ErrorCode.DOCUMENT_ALREADY_REGISTERED);
-        }
+        requireAvailableDocument(students.existsByDocumentAndIdNot(request.document(), studentId));
         student.setName(request.name());
         student.setDocument(request.document());
         return StudentResponse.from(student);
@@ -83,5 +79,11 @@ public class StudentService {
             throw new ApiException(ErrorCode.STUDENT_NOT_FOUND);
         }
         return student;
+    }
+
+    private void requireAvailableDocument(boolean alreadyRegistered) {
+        if (alreadyRegistered) {
+            throw new ApiException(ErrorCode.DOCUMENT_ALREADY_REGISTERED);
+        }
     }
 }
