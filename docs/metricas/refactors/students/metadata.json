@@ -1,0 +1,106 @@
+{
+  "tool": "gym-track-refactor-compare/1.0",
+  "area": "students",
+  "class": "StudentService",
+  "baseline_revision": "f0669d6f2898906a565fb179e2359f1bcd06fbca",
+  "after_revision": "1208b494c4b55c6f002f711fbcecb5e40d131a94",
+  "generated_utc": "2026-11-09T01:18:55.621891+00:00",
+  "git_head": "1208b494c4b55c6f002f711fbcecb5e40d131a94",
+  "script_sha256": "9194d5024285a42d3d0623f0bc7d7db62c040c6755f16abdb295e389280d802f",
+  "input_sha256": {
+    "antes/vg_loc/files.csv": "cb0b6a1eee7bb3dcfa3fc504c9d9e4cb81d041131e1e4b03bedb026cbe0b3a23",
+    "antes/vg_loc/methods.csv": "b0fe63ffe64bd0aab5d0a1a9fd322ddbd5351149f34ccec8b5e4d84dd4451ca9",
+    "antes/ck/ck.csv": "b80e440c16ab366ebd1d7816bfe1fa7c3c4a969cc936d3e6d7df61635e485898",
+    "antes/mi/mi.csv": "bcfe13f14f89dcbffcb6d8ff39ded4013739eaf5b03c4dbd3ee8094a7b91d0bf",
+    "antes/vg_loc/metadata.json": "d03bff0a53369816a5a868cbf2a96e3e7e34b4a6641b5f0a4e238ae2610a2f84",
+    "antes/ck/metadata.json": "da133ff3334478c8fba21fd5c4d7af5cd9f2e454eabaf46267d007b49d1ef9ec",
+    "antes/mi/metadata.json": "bcc383a8f4af47130a25e5aa73fca326d5fd92b5bfd0b0cf719bfb8bde9c8f17",
+    "antes/ck/class.csv": "dd8ce81f6725f21c488ea685773c78efdbb4c3ebc91094fd765d9333b10fb7d4",
+    "antes/ck/method.csv": "57724a00f32b51085cef94cb769a3d6e7ab8d0315b43c64f0094bc99c3809878",
+    "antes/ck/ck.log": "0633ec6d474314cabae001721ebd52d3effcfacd971d90c9ab6ad68d9e7547b4",
+    "despues/vg_loc/files.csv": "c61fb414cec3d8e327e233833b7d15dd09c13eb5b4764d9b8a1fb043e340895b",
+    "despues/vg_loc/methods.csv": "c2a8f06c345d7d3d0c93ad09c0e843cd0eadd0530baaaacbf780a82992f6d8c0",
+    "despues/ck/ck.csv": "5af23d46939c6fb4c9078ed66d94a72f9cb10a34e3413cbe32a38928f8c0fe2f",
+    "despues/mi/mi.csv": "d2de4b99716a51c041870c2ab0877399468a65349374d9072d45fe02427ce3cd",
+    "despues/vg_loc/metadata.json": "1d91f6645de51a8131df71a816604547b33071b7a78bda2dece558d9111a8e8c",
+    "despues/ck/metadata.json": "e714f5736b26a5a5acc7eda2ec26143542e823e4401415f7705b4a3f295316ea",
+    "despues/mi/metadata.json": "8c986e34455adfae2d8b48c8b8ae4e7a034efad1678c62b330d70371422fbd42",
+    "despues/ck/class.csv": "fff5949e2433aa5ea9921715e8b5234f8ffda939578f3af73f95f8d9ae001d36",
+    "despues/ck/method.csv": "d1b34b4299ed1c2d88d26899a4155c1180bf2ae0e919e322d9c1e08930ef8e93",
+    "despues/ck/ck.log": "0633ec6d474314cabae001721ebd52d3effcfacd971d90c9ab6ad68d9e7547b4"
+  },
+  "tests": {
+    "antes": {
+      "com.corhuila.gymtracker.controller.AuthControllerTest.txt": {
+        "tests": 4,
+        "sha256": "ea9bd2081a634732a4329f4c8a7e704620fb6002674b898fb3875d1074bad509"
+      },
+      "com.corhuila.gymtracker.controller.SessionControllerTest.txt": {
+        "tests": 16,
+        "sha256": "8b6e4674d3af0cbc2b4bbf51e1dc50e3747c03f31bc58ee6b620a0742273d067"
+      },
+      "com.corhuila.gymtracker.controller.StudentControllerTest.txt": {
+        "tests": 13,
+        "sha256": "b9678d5420318d2e77a6070eceaf82e456349b3f0130a1d4fe8ecdb743e2fb73"
+      },
+      "com.corhuila.gymtracker.controller.UserControllerTest.txt": {
+        "tests": 16,
+        "sha256": "2c0017f09d90b2970ddaf84b3403592ce30b07c65d94fc179aa7060d2761fc72"
+      },
+      "com.corhuila.gymtracker.service.AuthServiceTest.txt": {
+        "tests": 3,
+        "sha256": "2c500cd1aa571c7e3af7150231a8ef7a89acdad8b9645571ae4590ec7c547350"
+      },
+      "com.corhuila.gymtracker.service.SessionServiceTest.txt": {
+        "tests": 16,
+        "sha256": "2d1bedfff513a5d3e93cfe89f6c22508e88f3adac71153b9cd72d7a9353c6d99"
+      },
+      "com.corhuila.gymtracker.service.StudentServiceTest.txt": {
+        "tests": 13,
+        "sha256": "ac2e2bdbf2413421dc64aa7b01e7c8dce7a31efa8a6f755fa1f7486b470dbfb9"
+      },
+      "com.corhuila.gymtracker.service.UserServiceTest.txt": {
+        "tests": 10,
+        "sha256": "00e6a21e105e559b5d5806418a5011c5e63461b030ee46ef45e1ef0fd16d5bb1"
+      }
+    },
+    "despues": {
+      "com.corhuila.gymtracker.controller.AuthControllerTest.txt": {
+        "tests": 4,
+        "sha256": "2f94e7d4f2975ff4f3f0bc4d6af8a316f7fd341e5ba9ea35e88553fe1bc7259b"
+      },
+      "com.corhuila.gymtracker.controller.SessionControllerTest.txt": {
+        "tests": 16,
+        "sha256": "1ce0f98af5b85f2c67208c6f1795f7546d0620d7aa312bfeb6b8f1af1d5c59bf"
+      },
+      "com.corhuila.gymtracker.controller.StudentControllerTest.txt": {
+        "tests": 13,
+        "sha256": "53271233bfe12424df488ff7071a6887f02e73dec13e234864fce659da6bc967"
+      },
+      "com.corhuila.gymtracker.controller.UserControllerTest.txt": {
+        "tests": 16,
+        "sha256": "7331ddf307d0baab81994a2cd2ecf9d9c6c1f10c87b4ec89e7091122e0684dd9"
+      },
+      "com.corhuila.gymtracker.service.AuthServiceTest.txt": {
+        "tests": 3,
+        "sha256": "d371e6e22e89b885b97616f1b4e3ac2fa96cc05bd237b2af5e0b99921fd1de1b"
+      },
+      "com.corhuila.gymtracker.service.SessionServiceTest.txt": {
+        "tests": 16,
+        "sha256": "29d3c04bcaac3400e4381badaf41fe41e5a021fe80077b204c23a198befeb1c8"
+      },
+      "com.corhuila.gymtracker.service.StudentServiceTest.txt": {
+        "tests": 13,
+        "sha256": "e1541980be38e3f79a6997dd68b314a652144861f05d7933d2aa907717d4d17e"
+      },
+      "com.corhuila.gymtracker.service.UserServiceTest.txt": {
+        "tests": 10,
+        "sha256": "04bde4c2c27dfa07e7232003ae5eb920c8b51179e8278422d20d828d794e3353"
+      }
+    }
+  },
+  "output_sha256": {
+    "comparacion.csv": "9533b1e0dc881ea2a5305df06e7afe45541deab55548a78117514abd24f77196",
+    "comparacion.md": "1cddff4577a00f7923f2a7c532fb743b733681e68146d38ce785661ad11520f7"
+  }
+}
