@@ -238,6 +238,33 @@ class SessionServiceTest {
         verifyNoInteractions(sessions, studentService);
     }
 
+
+    @Test
+    void checkOut_closedSessionOfAnotherTrainer_hidesStateBeforeGroupQuery() {
+        Session session = session(UUID.randomUUID());
+        Instant closedAt = Instant.parse("2026-01-01T11:00:00Z");
+        session.setCheckOutAt(closedAt);
+        when(sessions.findById(session.getId())).thenReturn(Optional.of(session));
+
+        assertError(() -> sessionService.checkOut(session.getId(), UUID.randomUUID(), Role.TRAINER),
+                ErrorCode.SESSION_NOT_FOUND);
+
+        assertThat(session.getCheckOutAt()).isEqualTo(closedAt);
+        verifyNoInteractions(muscleGroups);
+    }
+
+    @Test
+    void logMuscleGroup_closedSessionOfAnotherTrainer_hidesStateAndInvalidGroup() {
+        Session session = session(UUID.randomUUID());
+        session.setCheckOutAt(Instant.parse("2026-01-01T11:00:00Z"));
+        when(sessions.findById(session.getId())).thenReturn(Optional.of(session));
+
+        assertError(() -> sessionService.logMuscleGroup(session.getId(), "invalid",
+                UUID.randomUUID(), Role.TRAINER), ErrorCode.SESSION_NOT_FOUND);
+
+        verifyNoInteractions(muscleGroups);
+    }
+
     private static Student student(UUID id, UUID trainerId) {
         User trainer = new User("trainer1", "Trainer One", "test-hash", Role.TRAINER);
         ReflectionTestUtils.setField(trainer, "id", trainerId);
