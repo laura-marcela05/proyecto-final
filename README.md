@@ -16,7 +16,7 @@ La aplicación es **código base reutilizado de Desarrollo Fullstack**. En esta 
 
 ## 3. Resumen de requisitos
 
-Este resumen agrupa el alcance; los criterios exactos y la trazabilidad pertenecen al documento original `docs/requisitos.md`, pendiente de incorporar al repositorio de entrega. El resumen no redefine los RF/RNF.
+Consulta los [10 RF y 3 RNF con criterios, trazabilidad y estado de verificación](docs/requisitos.md).
 
 | Alcance | Función |
 |---|---|
@@ -40,7 +40,7 @@ flowchart LR
     R --> D[(PostgreSQL)]
 ```
 
-Este diagrama resume la implementación observada. El original `docs/arquitectura.md` está pendiente de incorporar a la entrega.
+Consulta la [justificación y estructura de la arquitectura](docs/arquitectura.md).
 
 ## 5. Tecnologías
 
