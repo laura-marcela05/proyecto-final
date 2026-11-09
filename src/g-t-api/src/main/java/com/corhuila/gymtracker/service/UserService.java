@@ -40,9 +40,7 @@ public class UserService {
     /** BR-08: usernames are unique. BR-03: the role is chosen here and never changes. */
     @Transactional
     public UserResponse create(UserCreateRequest request) {
-        if (users.existsByUsername(request.username())) {
-            throw new ApiException(ErrorCode.USERNAME_ALREADY_TAKEN);
-        }
+        requireAvailableUsername(users.existsByUsername(request.username()));
         User user = new User(request.username(), request.fullName(),
                 passwordEncoder.encode(request.password()), request.role());
         return UserResponse.from(users.save(user));
@@ -51,9 +49,7 @@ public class UserService {
     @Transactional
     public UserResponse update(UUID userId, UserUpdateRequest request) {
         User user = find(userId);
-        if (users.existsByUsernameAndIdNot(request.username(), userId)) {
-            throw new ApiException(ErrorCode.USERNAME_ALREADY_TAKEN);
-        }
+        requireAvailableUsername(users.existsByUsernameAndIdNot(request.username(), userId));
         user.setFullName(request.fullName());
         user.setUsername(request.username());
         if (request.hasPassword()) {
@@ -77,5 +73,11 @@ public class UserService {
 
     private User find(UUID userId) {
         return users.findById(userId).orElseThrow(() -> new ApiException(ErrorCode.USER_NOT_FOUND));
+    }
+
+    private void requireAvailableUsername(boolean alreadyTaken) {
+        if (alreadyTaken) {
+            throw new ApiException(ErrorCode.USERNAME_ALREADY_TAKEN);
+        }
     }
 }
