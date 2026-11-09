@@ -61,8 +61,7 @@ public class SessionService {
     /** HU-03: logging a group already logged is a no-op, so the call can be repeated safely. */
     @Transactional
     public SessionResponse logMuscleGroup(UUID sessionId, String muscleGroup, UUID callerId, Role role) {
-        Session session = requireOwnSession(sessionId, callerId, role);
-        requireOpen(session);
+        Session session = requireOwnOpenSession(sessionId, callerId, role);
         MuscleGroup group = parseMuscleGroup(muscleGroup);
         if (!muscleGroups.existsBySessionIdAndMuscleGroup(sessionId, group)) {
             muscleGroups.saveAndFlush(new SessionMuscleGroup(session, group));
@@ -73,8 +72,7 @@ public class SessionService {
     /** BR-01: a session closes only with at least one muscle group; once closed it never reopens. */
     @Transactional
     public SessionResponse checkOut(UUID sessionId, UUID callerId, Role role) {
-        Session session = requireOwnSession(sessionId, callerId, role);
-        requireOpen(session);
+        Session session = requireOwnOpenSession(sessionId, callerId, role);
         if (!muscleGroups.existsBySessionId(sessionId)) {
             throw new ApiException(ErrorCode.MUSCLE_GROUPS_REQUIRED);
         }
@@ -119,5 +117,11 @@ public class SessionService {
                 .filter(status -> status.name().equals(value))
                 .findFirst()
                 .orElseThrow(() -> new ApiException(ErrorCode.VALIDATION_ERROR));
+    }
+
+    private Session requireOwnOpenSession(UUID sessionId, UUID callerId, Role role) {
+        Session session = requireOwnSession(sessionId, callerId, role);
+        requireOpen(session);
+        return session;
     }
 }
