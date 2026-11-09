@@ -82,6 +82,7 @@ class StudentServiceTest {
 
         assertError(() -> studentService.create(callerId, new StudentRequest("Ana", "123")),
                 ErrorCode.UNAUTHENTICATED);
+        org.mockito.Mockito.verifyNoInteractions(students);
         verify(students, never()).save(any());
     }
 
@@ -166,6 +167,7 @@ class StudentServiceTest {
                 new StudentRequest("Changed", "987")), ErrorCode.STUDENT_NOT_FOUND);
         assertThat(existing.getName()).isEqualTo("Ana Torres");
         assertThat(existing.getDocument()).isEqualTo("1082345678");
+        verify(students, never()).existsByDocumentAndIdNot(any(), any());
     }
 
     @Test
@@ -189,6 +191,22 @@ class StudentServiceTest {
         studentService.delete(studentId, UUID.randomUUID(), Role.ADMIN);
 
         verify(students).delete(existing);
+    }
+
+
+    @Test
+    void updateStudent_withOwnDocument_usesQueryExcludingOwnId() {
+        UUID trainerId = UUID.randomUUID();
+        UUID studentId = UUID.randomUUID();
+        Student existing = student(studentId, trainerId);
+        when(students.findById(studentId)).thenReturn(Optional.of(existing));
+
+        StudentResponse result = studentService.update(studentId, trainerId, Role.TRAINER,
+                new StudentRequest("Updated name", "1082345678"));
+
+        assertThat(result.document()).isEqualTo("1082345678");
+        verify(students).existsByDocumentAndIdNot("1082345678", studentId);
+        verify(students, never()).existsByDocument(any());
     }
 
     private static User trainer(UUID id) {
