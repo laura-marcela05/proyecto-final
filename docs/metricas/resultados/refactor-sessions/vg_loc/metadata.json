@@ -1,0 +1,26 @@
+{
+  "tool": "gym-track-vg-loc/1.0",
+  "git_head": "9506ff4ffb09af9f92f077ddb60bc05a35bb3034",
+  "generated_utc": "2026-11-09T02:03:28.894130+00:00",
+  "scope": [
+    [
+      "src/g-t-api/src/main/java",
+      ".java",
+      "java"
+    ],
+    [
+      "src/g-t-portal/src",
+      ".ts",
+      "typescript"
+    ]
+  ],
+  "units": "explicit methods, constructors, lambdas and TypeScript functions; no generated methods",
+  "script_sha256": "f2dad9f3fde234efc20a5917d6754eb4d38e843d2d19223c0e2d9f75ea3bb411",
+  "versions": {
+    "tree-sitter": "0.25.2",
+    "tree-sitter-java": "0.23.5",
+    "tree-sitter-typescript": "0.23.2"
+  },
+  "file_count": 71,
+  "unit_count": 270
+}

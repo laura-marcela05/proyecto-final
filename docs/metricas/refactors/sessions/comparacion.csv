@@ -1,0 +1,52 @@
+elemento,metrica,antes,despues,cambio,lectura
+SessionService,LOC fisicas archivo,123,127,4,"Tamano del archivo, incluye auxiliares"
+SessionService,LOC codigo archivo,104,107,3,"Tamano del archivo, incluye auxiliares"
+SessionService,WMC,20,21,1,No asumir que extraer un metodo reduce esta metrica
+SessionService,DIT,1,1,0,No asumir que extraer un metodo reduce esta metrica
+SessionService,NOC,0,0,0,No asumir que extraer un metodo reduce esta metrica
+SessionService,CBO,15,15,0,No asumir que extraer un metodo reduce esta metrica
+SessionService,RFC,39,40,1,No asumir que extraer un metodo reduce esta metrica
+SessionService,LCOM,19,29,10,No asumir que extraer un metodo reduce esta metrica
+SessionService,LCOM*,0.6333,0.6667,0.0333,No asumir que extraer un metodo reduce esta metrica
+SessionService.checkIn,V(G),3,3,0,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.checkIn,LOC cuerpo,11,11,0,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.checkIn,MI bruto lexical,100.3500,100.3500,0,Misma convencion lexical; no mezclar escalas
+SessionService.checkIn,MI normalizado lexical,58.6842,58.6842,0,Misma convencion lexical; no mezclar escalas
+SessionService.checkOut,V(G),2,2,0,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.checkOut,LOC cuerpo,9,8,-1,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.checkOut,MI bruto lexical,105.4704,107.8911,2.4207,Misma convencion lexical; no mezclar escalas
+SessionService.checkOut,MI normalizado lexical,61.6786,63.0942,1.4156,Misma convencion lexical; no mezclar escalas
+SessionService.delete,V(G),1,1,0,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.delete,LOC cuerpo,3,3,0,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.delete,MI bruto lexical,131.7511,131.7511,0,Misma convencion lexical; no mezclar escalas
+SessionService.delete,MI normalizado lexical,77.0474,77.0474,0,Misma convencion lexical; no mezclar escalas
+SessionService.list,V(G),1,1,0,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.list,LOC cuerpo,8,8,0,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.list,MI bruto lexical,108.8451,108.8451,0,Misma convencion lexical; no mezclar escalas
+SessionService.list,MI normalizado lexical,63.6521,63.6521,0,Misma convencion lexical; no mezclar escalas
+SessionService.logMuscleGroup,V(G),2,2,0,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.logMuscleGroup,LOC cuerpo,9,8,-1,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.logMuscleGroup,MI bruto lexical,105.2646,107.6644,2.3998,Misma convencion lexical; no mezclar escalas
+SessionService.logMuscleGroup,MI normalizado lexical,61.5583,62.9616,1.4034,Misma convencion lexical; no mezclar escalas
+SessionService.parseMuscleGroup,V(G),1,1,0,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.parseMuscleGroup,LOC cuerpo,6,6,0,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.parseMuscleGroup,MI bruto lexical,117.8493,117.8493,0,Misma convencion lexical; no mezclar escalas
+SessionService.parseMuscleGroup,MI normalizado lexical,68.9177,68.9177,0,Misma convencion lexical; no mezclar escalas
+SessionService.parseStatus,V(G),2,2,0,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.parseStatus,LOC cuerpo,9,9,0,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.parseStatus,MI bruto lexical,108.7431,108.7431,0,Misma convencion lexical; no mezclar escalas
+SessionService.parseStatus,MI normalizado lexical,63.5925,63.5925,0,Misma convencion lexical; no mezclar escalas
+SessionService.requireOpen,V(G),2,2,0,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.requireOpen,LOC cuerpo,5,5,0,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.requireOpen,MI bruto lexical,120.9538,120.9538,0,Misma convencion lexical; no mezclar escalas
+SessionService.requireOpen,MI normalizado lexical,70.7332,70.7332,0,Misma convencion lexical; no mezclar escalas
+SessionService.requireOwnOpenSession,V(G),Sin dato,1,Unidad nueva; no comparable,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.requireOwnOpenSession,LOC cuerpo,Sin dato,5,Unidad nueva; no comparable,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.requireOwnOpenSession,MI bruto lexical,Sin dato,121.5374,Unidad nueva; no comparable,Misma convencion lexical; no mezclar escalas
+SessionService.requireOwnOpenSession,MI normalizado lexical,Sin dato,71.0745,Unidad nueva; no comparable,Misma convencion lexical; no mezclar escalas
+SessionService.requireOwnSession,V(G),3,3,0,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.requireOwnSession,LOC cuerpo,8,8,0,Comparar tambien auxiliares y clase; menor valor local no prueba mejora global
+SessionService.requireOwnSession,MI bruto lexical,107.1875,107.1875,0,Misma convencion lexical; no mezclar escalas
+SessionService.requireOwnSession,MI normalizado lexical,62.6828,62.6828,0,Misma convencion lexical; no mezclar escalas
+SessionService,Unidades ejecutables del archivo,16,17,1,Incluye constructores y lambdas; esta suma NO es WMC de CK
+SessionService,Suma V(G) de unidades del archivo,25,26,1,Incluye constructores y lambdas; esta suma NO es WMC de CK
