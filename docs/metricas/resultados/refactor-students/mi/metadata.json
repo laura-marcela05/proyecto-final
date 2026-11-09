@@ -1,0 +1,34 @@
+{
+  "tool": "gym-track-mi-lexical/1.0",
+  "input_metadata": {
+    "tool": "gym-track-vg-loc/1.0",
+    "git_head": "1208b494c4b55c6f002f711fbcecb5e40d131a94",
+    "generated_utc": "2026-11-09T01:18:04.030090+00:00",
+    "scope": [
+      [
+        "src/g-t-api/src/main/java",
+        ".java",
+        "java"
+      ],
+      [
+        "src/g-t-portal/src",
+        ".ts",
+        "typescript"
+      ]
+    ],
+    "units": "explicit methods, constructors, lambdas and TypeScript functions; no generated methods",
+    "script_sha256": "f2dad9f3fde234efc20a5917d6754eb4d38e843d2d19223c0e2d9f75ea3bb411",
+    "versions": {
+      "tree-sitter": "0.25.2",
+      "tree-sitter-java": "0.23.5",
+      "tree-sitter-typescript": "0.23.2"
+    },
+    "file_count": 71,
+    "unit_count": 270
+  },
+  "git_head": "1208b494c4b55c6f002f711fbcecb5e40d131a94",
+  "generated_utc": "2026-11-09T01:18:06.526502+00:00",
+  "input_csv_sha256": "c2a8f06c345d7d3d0c93ad09c0e843cd0eadd0530baaaacbf780a82992f6d8c0",
+  "script_sha256": "efb77fd24c11eb96d9947ff07128ebad67134a46ba552222a242bb8dfc522bcb",
+  "warning": "Experimental lexical Halstead convention; do not label as Visual Studio MI or apply thresholds from another scale blindly"
+}
