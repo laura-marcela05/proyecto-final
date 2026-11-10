@@ -140,8 +140,8 @@ docs/metricas/   fichas, resultados, gráficos y análisis
 docs/informe/    procedencia y material del informe
 ```
 
-**Informe final:** pendiente de consolidación. Se añadirá en `docs/informe-final.pdf` y se enlazará aquí cuando esté publicado.
+**Informe final:** [Descargar el informe de auditoría](docs/informe-final.pdf).
 
 ## 10. Licencia y estado
 
-Entrega académica en preparación. No se ha confirmado una licencia para el código reutilizado; no se declara una licencia no documentada. La entrega final queda pendiente del informe y del tag. La aplicación no incluye reportes funcionales; el alcance de ese requisito debe confirmarse con el docente. Las tablas y gráficos de calidad documentan la evaluación del proyecto.
+Entrega académica en preparación. No se ha confirmado una licencia para el código reutilizado; no se declara una licencia no documentada. El informe final está disponible en la sección 9. La aplicación no incluye reportes funcionales; el alcance de ese requisito debe confirmarse con el docente. Las tablas y gráficos de calidad documentan la evaluación del proyecto.
